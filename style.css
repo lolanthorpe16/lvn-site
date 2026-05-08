@@ -1,3 +1,7 @@
+html {
+    scroll-behavior: smooth;
+}
+
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
 body {
@@ -79,5 +83,26 @@ nav ul li a { text-decoration: none; color: #1a1a1a; text-transform: uppercase; 
     margin-bottom: 15px;
 }
 
+/* Updated .item with transition */
+.item { 
+    font-size: 14px; 
+    letter-spacing: 1px; 
+    font-weight: 400; 
+    text-transform: uppercase;
+    transition: transform 0.3s ease; /* This adds the smooth movement */
+    cursor: pointer;
+}
+
+/* This makes the item lift up when hovered */
+.item:hover {
+    transform: translateY(-10px);
+}
+
 .item h3 { font-size: 14px; letter-spacing: 1px; font-weight: 400; text-transform: uppercase; }
 .item p { color: #777; font-size: 13px; }
+
+@media (max-width: 768px) {
+    nav { flex-direction: column; gap: 20px; }
+    nav ul { padding: 0; }
+    .hero h1 { font-size: 32px; letter-spacing: 6px; }
+}
