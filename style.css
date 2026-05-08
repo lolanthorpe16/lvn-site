@@ -1,91 +1,83 @@
-/* 1. The Basics */
-* { 
-    margin: 0; 
-    padding: 0; 
-    box-sizing: border-box; 
-}
+* { margin: 0; padding: 0; box-sizing: border-box; }
 
 body {
-    background-color: #ffffff;
+    font-family: 'Montserrat', sans-serif;
+    background-color: #fff;
     color: #1a1a1a;
-    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; /* Clean & Modern */
-    text-align: center;
+    line-height: 1.6;
 }
 
-/* 2. Navigation */
+/* Navigation */
 nav {
-    padding: 40px 0;
-    text-transform: uppercase;
-    letter-spacing: 3px;
-    font-size: 11px;
-}
-
-nav ul {
-    list-style: none;
     display: flex;
-    justify-content: center;
-    gap: 30px;
-    margin-top: 15px;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 10%;
+    background: white;
 }
 
-nav a {
-    text-decoration: none;
-    color: #999;
+.logo {
+    font-family: 'Cinzel', serif;
+    font-size: 24px;
+    letter-spacing: 5px;
 }
 
-/* 3. Hero Section (The Big Title) */
+nav ul { display: flex; list-style: none; }
+nav ul li { margin-left: 30px; }
+nav ul li a { text-decoration: none; color: #1a1a1a; text-transform: uppercase; font-size: 11px; letter-spacing: 2px; }
+
+/* Hero Section */
 .hero {
-    padding: 100px 20px;
+    height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background-color: #f9f9f9; /* Replace this later with a big photo background */
 }
 
 .hero h1 {
-    font-family: serif; /* Gives it that Cinzel/Tiffany look */
-    font-size: 42px;
-    letter-spacing: 10px;
-    font-weight: 300;
-    margin-bottom: 20px;
+    font-family: 'Cinzel', serif;
+    font-size: 50px;
+    letter-spacing: 12px;
+    margin-bottom: 10px;
 }
 
 .hero p {
-    font-size: 13px;
+    font-weight: 300;
     letter-spacing: 3px;
-    color: #666;
     text-transform: uppercase;
+    font-size: 14px;
+    margin-bottom: 30px;
 }
 
-/* 4. Product Grid (Fixes the "Stacked" look) */
-.products {
-    padding: 50px 10%;
+.btn {
+    padding: 15px 40px;
+    border: 1px solid #1a1a1a;
+    text-decoration: none;
+    color: #1a1a1a;
+    font-size: 12px;
+    letter-spacing: 2px;
+    transition: 0.3s;
 }
+
+.btn:hover { background: #1a1a1a; color: #fff; }
+
+/* Product Grid */
+.products { padding: 80px 10%; text-align: center; }
+.products h2 { font-family: 'Cinzel', serif; margin-bottom: 50px; letter-spacing: 4px; }
 
 .grid {
-    display: flex; /* This puts items side-by-side */
-    justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 40px;
-    flex-wrap: wrap; /* Makes it work on mobile */
-}
-
-.item {
-    width: 300px; /* Width of each product */
-    margin-bottom: 40px;
 }
 
 .img-placeholder {
-    width: 100%;
-    height: 400px;
-    background-color: #f7f7f7; /* Light grey box for now */
-    margin-bottom: 20px;
+    background-color: #eee;
+    height: 350px;
+    margin-bottom: 15px;
 }
 
-.item h3 {
-    font-size: 14px;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    font-weight: 400;
-}
-
-.item p {
-    font-size: 13px;
-    color: #888;
-    margin-top: 5px;
-}
+.item h3 { font-size: 14px; letter-spacing: 1px; font-weight: 400; text-transform: uppercase; }
+.item p { color: #777; font-size: 13px; }
