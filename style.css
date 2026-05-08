@@ -1,8 +1,13 @@
+/* 1. Global Setup */
 html {
     scroll-behavior: smooth;
 }
 
-* { margin: 0; padding: 0; box-sizing: border-box; }
+* { 
+    margin: 0; 
+    padding: 0; 
+    box-sizing: border-box; 
+}
 
 body {
     font-family: 'Montserrat', sans-serif;
@@ -11,7 +16,7 @@ body {
     line-height: 1.6;
 }
 
-/* Navigation */
+/* 2. Navigation */
 nav {
     display: flex;
     justify-content: space-between;
@@ -26,18 +31,31 @@ nav {
     letter-spacing: 5px;
 }
 
-nav ul { display: flex; list-style: none; }
-nav ul li { margin-left: 30px; }
-nav ul li a { text-decoration: none; color: #1a1a1a; text-transform: uppercase; font-size: 11px; letter-spacing: 2px; }
+nav ul { 
+    display: flex; 
+    list-style: none; 
+}
 
-/* Hero Section */
+nav ul li { 
+    margin-left: 30px; 
+}
+
+nav ul li a { 
+    text-decoration: none; 
+    color: #1a1a1a; 
+    text-transform: uppercase; 
+    font-size: 11px; 
+    letter-spacing: 2px; 
+}
+
+/* 3. Hero Section */
 .hero {
     height: 80vh;
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
-    background-color: #f9f9f9; /* Replace this later with a big photo background */
+    background-color: #f9f9f9; 
 }
 
 .hero h1 {
@@ -65,44 +83,78 @@ nav ul li a { text-decoration: none; color: #1a1a1a; text-transform: uppercase; 
     transition: 0.3s;
 }
 
-.btn:hover { background: #1a1a1a; color: #fff; }
+.btn:hover { 
+    background: #1a1a1a; 
+    color: #fff; 
+}
 
-/* Product Grid */
-.products { padding: 80px 10%; text-align: center; }
-.products h2 { font-family: 'Cinzel', serif; margin-bottom: 50px; letter-spacing: 4px; }
+/* 4. Product Grid & Images */
+.products { 
+    padding: 80px 10%; 
+    text-align: center; 
+}
+
+.products h2 { 
+    font-family: 'Cinzel', serif; 
+    margin-bottom: 50px; 
+    letter-spacing: 4px; 
+}
 
 .grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    /* This creates a clean grid that fits 2 or 4 items perfectly */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 40px;
 }
 
-.img-placeholder {
-    background-color: #eee;
-    height: 350px;
+.product-photo {
+    width: 100%;
+    height: 400px;      /* Consistent height for all screenshots */
+    object-fit: cover;  /* This ensures the screenshots don't look squashed */
     margin-bottom: 15px;
+    background-color: #f9f9f9;
+    border: 1px solid #eee; /* Light border to define the image edges */
 }
 
-/* Updated .item with transition */
+/* 5. Hover Effects */
 .item { 
-    font-size: 14px; 
-    letter-spacing: 1px; 
-    font-weight: 400; 
-    text-transform: uppercase;
-    transition: transform 0.3s ease; /* This adds the smooth movement */
+    transition: transform 0.3s ease; 
     cursor: pointer;
+    margin-bottom: 20px;
 }
 
-/* This makes the item lift up when hovered */
 .item:hover {
     transform: translateY(-10px);
 }
 
-.item h3 { font-size: 14px; letter-spacing: 1px; font-weight: 400; text-transform: uppercase; }
-.item p { color: #777; font-size: 13px; }
+.item h3 { 
+    font-size: 14px; 
+    letter-spacing: 1px; 
+    font-weight: 400; 
+    text-transform: uppercase; 
+    margin-top: 10px;
+}
 
+.item p { 
+    color: #777; 
+    font-size: 13px; 
+    margin-top: 5px;
+}
+
+/* 6. Mobile Optimization */
 @media (max-width: 768px) {
-    nav { flex-direction: column; gap: 20px; }
-    nav ul { padding: 0; }
-    .hero h1 { font-size: 32px; letter-spacing: 6px; }
+    nav { 
+        flex-direction: column; 
+        gap: 20px; 
+    }
+    nav ul { 
+        padding: 0; 
+    }
+    .hero h1 { 
+        font-size: 32px; 
+        letter-spacing: 6px; 
+    }
+    .product-photo { 
+        height: 350px; 
+    }
 }
